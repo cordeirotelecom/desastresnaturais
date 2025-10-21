@@ -349,69 +349,6 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* NOVA SEÇÃO - RECURSOS E APRENDIZADO */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            📚 Aprenda com os Melhores do Mundo
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Acesse casos de sucesso internacional, documentos oficiais e treinamentos gratuitos
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Casos de Sucesso */}
-          <Link href="/casos-sucesso" className="group">
-            <div className="card-premium p-8 text-center h-full hover:scale-105 transition-transform duration-300">
-              <div className="text-6xl mb-4">🌍</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Casos de Sucesso</h3>
-              <p className="text-gray-600 mb-6">
-                Veja como Japão, Holanda, EUA e outros países alcançaram 80-98% de eficácia
-              </p>
-              <div className="inline-flex items-center text-blue-600 font-semibold group-hover:gap-3 transition-all">
-                Explorar Sistemas <ArrowRight className="w-5 h-5 ml-2" />
-              </div>
-            </div>
-          </Link>
-
-          {/* Documentos Oficiais */}
-          <Link href="/recursos-oficiais?tab=documentos" className="group">
-            <div className="card-premium p-8 text-center h-full hover:scale-105 transition-transform duration-300">
-              <div className="text-6xl mb-4">📄</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Documentos Oficiais</h3>
-              <p className="text-gray-600 mb-6">
-                Leis, manuais e protocolos do MP, Defesa Civil e órgãos governamentais
-              </p>
-              <div className="inline-flex items-center text-green-600 font-semibold group-hover:gap-3 transition-all">
-                Baixar Documentos <ArrowRight className="w-5 h-5 ml-2" />
-              </div>
-            </div>
-          </Link>
-
-          {/* Treinamentos */}
-          <Link href="/recursos-oficiais?tab=treinamentos" className="group">
-            <div className="card-premium p-8 text-center h-full hover:scale-105 transition-transform duration-300">
-              <div className="text-6xl mb-4">🎓</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Cursos Gratuitos</h3>
-              <p className="text-gray-600 mb-6">
-                Treinamentos da ENAP, Defesa Civil, CEPED/UFSC e Cruz Vermelha
-              </p>
-              <div className="inline-flex items-center text-purple-600 font-semibold group-hover:gap-3 transition-all">
-                Ver Cursos <ArrowRight className="w-5 h-5 ml-2" />
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Destaque */}
-        <div className="mt-8 bg-white/70 backdrop-blur-sm border-2 border-blue-200 rounded-xl p-6 text-center">
-          <p className="text-gray-700">
-            <strong className="text-blue-600">✨ Novo!</strong> Todos os recursos baseados em sistemas reais que salvam vidas ao redor do mundo
-          </p>
-        </div>
-      </section>
-
       {/* DEPOIMENTOS / IMPACTO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
