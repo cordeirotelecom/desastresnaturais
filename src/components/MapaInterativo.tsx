@@ -291,7 +291,7 @@ export default function MapaInterativo() {
     let emg = emergenciasMock;
     let vol = voluntariosMock;
     let abr = abrigosMock;
-    let risk = areasRiscoMock;
+    const risk = areasRiscoMock;
 
     if (filtros.apenasCriticas) {
       emg = emg.filter(e => e.urgencia === 'critica');

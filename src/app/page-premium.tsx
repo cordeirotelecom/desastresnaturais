@@ -97,7 +97,7 @@ const features: Feature[] = [
 ];
 
 export default function Homepage() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [stats, setStats] = useState<Stats>({
     emergencias: 47,
     abrigados: 2847,

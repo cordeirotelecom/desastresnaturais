@@ -144,9 +144,9 @@ const generateToken = (user: User): string => {
 };
 
 // Decodificar token
-export const decodeToken = (token: string): any => {
+export const decodeToken = (token: string): Record<string, unknown> | null => {
   try {
-    return JSON.parse(atob(token));
+    return JSON.parse(atob(token)) as Record<string, unknown>;
   } catch {
     return null;
   }
@@ -155,7 +155,7 @@ export const decodeToken = (token: string): any => {
 // Validar token
 export const validateToken = (token: string): boolean => {
   const decoded = decodeToken(token);
-  if (!decoded) return false;
+  if (!decoded || typeof decoded.exp !== 'number') return false;
   return decoded.exp > Date.now();
 };
 

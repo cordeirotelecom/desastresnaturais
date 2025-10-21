@@ -178,7 +178,7 @@ export default function DashboardAutoridades() {
   };
 
   const getBadgeStatus = (status: string) => {
-    const badges: any = {
+    const badges: Record<string, { bg: string; text: string; label: string; icon: React.ElementType }> = {
       'pendente': { bg: 'bg-yellow-100', text: 'text-yellow-800', label: 'Pendente', icon: Clock },
       'em-atendimento': { bg: 'bg-blue-100', text: 'text-blue-800', label: 'Em Atendimento', icon: Activity },
       'resolvido': { bg: 'bg-green-100', text: 'text-green-800', label: 'Resolvido', icon: CheckCircle },
@@ -236,7 +236,7 @@ export default function DashboardAutoridades() {
             ].map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
-                onClick={() => setSecaoAtiva(id as any)}
+                onClick={() => setSecaoAtiva(id as typeof secaoAtiva)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-lg transition whitespace-nowrap ${
                   secaoAtiva === id
                     ? 'bg-white text-blue-900 font-semibold shadow-lg'

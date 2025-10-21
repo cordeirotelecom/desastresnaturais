@@ -95,8 +95,8 @@ export default function CadastroVoluntarios() {
 
   const adicionarHabilidade = (tipo: string, nivel: string) => {
     const novaHabilidade: HabilidadeVoluntario = {
-      tipo: tipo as any,
-      nivel: nivel as any,
+      tipo: tipo as HabilidadeVoluntario['tipo'],
+      nivel: nivel as HabilidadeVoluntario['nivel'],
     };
     setHabilidades(prev => [...prev, novaHabilidade]);
   };
@@ -165,7 +165,7 @@ export default function CadastroVoluntarios() {
         profissao: formData.profissao,
         escolaridade: formData.escolaridade,
         disponibilidade: {
-          diasDaSemana: formData.diasDisponiveis as any[],
+          diasDaSemana: formData.diasDisponiveis as import('@/services/volunteer-api').DiaDaSemana[],
           horarios: formData.horarios,
           tipoAtuacao: [],
         },

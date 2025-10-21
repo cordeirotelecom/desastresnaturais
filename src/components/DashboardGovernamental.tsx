@@ -153,7 +153,7 @@ export default function DashboardGovernamental() {
 // COMPONENTES DAS ABAS
 // ============================================================================
 
-function VisaoGeral({ dashboard }: { dashboard: any }) {
+function VisaoGeral({ dashboard }: { dashboard: Record<string, unknown> }) {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-3">

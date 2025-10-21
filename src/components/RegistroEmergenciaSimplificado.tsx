@@ -257,7 +257,7 @@ export default function RegistroEmergenciaSimplificado() {
                 </button>
               </div>
               <p className="mt-1 text-sm text-gray-500">
-                Clique em "GPS" para pegar automaticamente ou digite manualmente
+                Clique em &quot;GPS&quot; para pegar automaticamente ou digite manualmente
               </p>
             </div>
 
@@ -345,7 +345,7 @@ export default function RegistroEmergenciaSimplificado() {
                 placeholder="Ex: Estou ilhado, água subindo, preciso de resgate com barco"
               />
               <p className="mt-1 text-sm text-gray-500">
-                Exemplos: "estou ilhado", "preciso de medicamento", "abrigo lotado"
+                Exemplos: &quot;estou ilhado&quot;, &quot;preciso de medicamento&quot;, &quot;abrigo lotado&quot;
               </p>
             </div>
 

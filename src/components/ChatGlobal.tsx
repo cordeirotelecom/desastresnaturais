@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  MessageSquare, Send, Users, AlertTriangle, User, Shield, Heart, 
+  MessageSquare, Send, Users, AlertTriangle, User as UserIcon, Shield, Heart, 
   Clock, RefreshCw, LogOut, Bell, Settings, TrendingUp, Activity
 } from 'lucide-react';
 import { getCurrentUser } from '../services/auth';
 import { useRouter } from 'next/navigation';
 import AvisoDadosFicticios from '@/components/AvisoDadosFicticios';
+import type { User } from '../services/auth';
 
 interface Message {
   id: string;
@@ -32,7 +33,7 @@ const USERS_KEY = 'online_users';
 
 export default function ChatGlobal() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [onlineUsers, setOnlineUsers] = useState<OnlineUser[]>([]);
   const [newMessage, setNewMessage] = useState('');
@@ -87,7 +88,7 @@ export default function ChatGlobal() {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
-        const messagesWithDates = parsed.map((msg: any) => ({
+        const messagesWithDates = parsed.map((msg: Message) => ({
           ...msg,
           timestamp: new Date(msg.timestamp)
         }));
@@ -98,7 +99,7 @@ export default function ChatGlobal() {
     }
   };
 
-  const addUserOnline = (currentUser: any) => {
+  const addUserOnline = (currentUser: User) => {
     try {
       const stored = localStorage.getItem(USERS_KEY);
       let users: OnlineUser[] = stored ? JSON.parse(stored) : [];
@@ -226,13 +227,13 @@ export default function ChatGlobal() {
   const getRoleBadge = (role: string) => {
     switch (role) {
       case 'vitima':
-        return { icon: User, color: 'bg-blue-100 text-blue-700', label: 'Vítima' };
+        return { icon: UserIcon, color: 'bg-blue-100 text-blue-700', label: 'Vítima' };
       case 'voluntario':
         return { icon: Heart, color: 'bg-green-100 text-green-700', label: 'Voluntário' };
       case 'autoridade':
         return { icon: Shield, color: 'bg-red-100 text-red-700', label: 'Autoridade' };
       default:
-        return { icon: User, color: 'bg-gray-100 text-gray-700', label: 'Usuário' };
+        return { icon: UserIcon, color: 'bg-gray-100 text-gray-700', label: 'Usuário' };
     }
   };
 

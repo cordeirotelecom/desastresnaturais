@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  Activity, User, Calendar, Filter, Download, 
+  Activity, User as UserIcon, Calendar, Filter, Download, 
   AlertTriangle, Heart, Users, Shield, Package, 
   MapPin, MessageSquare, FileText, Clock, TrendingUp,
   CheckCircle, XCircle, AlertCircle, Info
 } from 'lucide-react';
-import { getCurrentUser } from '@/services/auth';
+import { getCurrentUser, type User } from '@/services/auth';
 import { useRouter } from 'next/navigation';
 
 interface ActivityLog {
@@ -20,12 +20,12 @@ interface ActivityLog {
   description: string;
   timestamp: Date;
   status: 'success' | 'warning' | 'error' | 'info';
-  metadata?: any;
+  metadata?: Record<string, unknown>;
 }
 
 export default function RegistroAtividades() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [activities, setActivities] = useState<ActivityLog[]>([]);
   const [filteredActivities, setFilteredActivities] = useState<ActivityLog[]>([]);
   const [filterCategory, setFilterCategory] = useState<string>('all');
@@ -43,7 +43,7 @@ export default function RegistroAtividades() {
     loadActivities(currentUser);
   }, [router]);
 
-  const loadActivities = (currentUser: any) => {
+  const loadActivities = (currentUser: User) => {
     // Dados mockados de atividades
     const mockActivities: ActivityLog[] = [
       {
@@ -265,7 +265,7 @@ export default function RegistroAtividades() {
       case 'vitima': return <Heart className="w-3 h-3" />;
       case 'voluntario': return <Users className="w-3 h-3" />;
       case 'autoridade': return <Shield className="w-3 h-3" />;
-      default: return <User className="w-3 h-3" />;
+      default: return <UserIcon className="w-3 h-3" />;
     }
   };
 
@@ -498,7 +498,7 @@ export default function RegistroAtividades() {
 
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <User className="w-4 h-4 text-gray-400" />
+                        <UserIcon className="w-4 h-4 text-gray-400" />
                         <span className="text-gray-600">{activity.userName}</span>
                         <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium ${getRoleColor(activity.userRole)}`}>
                           {getRoleIcon(activity.userRole)}
