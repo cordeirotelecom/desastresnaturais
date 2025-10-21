@@ -8,7 +8,7 @@ import {
   UserPlus, LogIn, Brain, ArrowRight, Play, Star, Award, Target,
   Building2, Map, HeartHandshake, Radio, Bot, BarChart3, Search
 } from 'lucide-react';
-import { getCurrentUser } from '@/services/auth';
+import { getCurrentUser, type User } from '@/services/auth';
 import { getTotalVagasDisponiveis, getTotalCapacidade } from '@/data/real-locations';
 
 interface Stats {

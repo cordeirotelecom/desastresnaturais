@@ -28,9 +28,45 @@ import type {
   AvaliacaoDHS
 } from '@/services/integracao-governamental';
 
+interface DashboardData {
+  desastres: {
+    vigentes: number;
+    aguardandoAnalise: number;
+    totalAfetados: number;
+  };
+  ocorrencias: {
+    abertas: number;
+    emAtendimento: number;
+    concluidas24h: number;
+  };
+  areasRisco: {
+    total: number;
+    altoRisco: number;
+    pessoasExpostas: number;
+  };
+  rios: {
+    emAlerta: number;
+    emEmergencia: number;
+  };
+  recursos: {
+    totalAutorizado: number;
+    totalRecebido: number;
+    totalPendente: number;
+  };
+  dat: {
+    solicitacoesPendentes: number;
+    emAtendimento: number;
+    aprovadas?: number;
+  };
+  dhs?: {
+    iniciativasAvaliadas: number;
+    mediaIndice: number;
+  };
+}
+
 export default function DashboardGovernamental() {
   const [abaAtiva, setAbaAtiva] = useState<'visao-geral' | 's2id' | 'segird' | 'rios' | 'areas-risco' | 'decretos' | 'dat' | 'transferencias' | 'boas-praticas' | 'dhs'>('visao-geral');
-  const [dashboard, setDashboard] = useState<any>(null);
+  const [dashboard, setDashboard] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -41,7 +77,7 @@ export default function DashboardGovernamental() {
     setLoading(true);
     try {
       const dados = integracaoGovernamental.obterDashboardUnificado();
-      setDashboard(dados);
+      setDashboard(dados as DashboardData);
     } catch (error) {
       console.error('Erro ao carregar dados governamentais:', error);
     } finally {
@@ -88,7 +124,7 @@ export default function DashboardGovernamental() {
               <div className="text-blue-100 text-sm">Ocorrências Abertas</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <div className="text-2xl font-bold">{dashboard?.rios.emAlerta + dashboard?.rios.emEmergencia || 0}</div>
+              <div className="text-2xl font-bold">{(dashboard?.rios.emAlerta || 0) + (dashboard?.rios.emEmergencia || 0)}</div>
               <div className="text-blue-100 text-sm">Rios em Alerta</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -117,7 +153,7 @@ export default function DashboardGovernamental() {
             ].map(aba => (
               <button
                 key={aba.id}
-                onClick={() => setAbaAtiva(aba.id as any)}
+                onClick={() => setAbaAtiva(aba.id as typeof abaAtiva)}
                 className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 transition-all ${
                   abaAtiva === aba.id
                     ? 'border-blue-600 text-blue-600 bg-blue-50'
@@ -153,7 +189,9 @@ export default function DashboardGovernamental() {
 // COMPONENTES DAS ABAS
 // ============================================================================
 
-function VisaoGeral({ dashboard }: { dashboard: Record<string, unknown> }) {
+function VisaoGeral({ dashboard }: { dashboard: DashboardData | null }) {
+  if (!dashboard) return <div>Carregando...</div>;
+  
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
@@ -317,24 +355,24 @@ function VisaoGeral({ dashboard }: { dashboard: Record<string, unknown> }) {
           <div>
             <div className="flex justify-between mb-2">
               <span className="text-gray-700 font-medium">Iniciativas Avaliadas:</span>
-              <span className="font-bold text-purple-600">{dashboard.dhs.iniciativasAvaliadas}</span>
+              <span className="font-bold text-purple-600">{dashboard.dhs?.iniciativasAvaliadas || 0}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-700 font-medium">Índice Médio:</span>
-              <span className="font-bold text-blue-600">{dashboard.dhs.mediaIndice}/100</span>
+              <span className="font-bold text-blue-600">{dashboard.dhs?.mediaIndice || 0}/100</span>
             </div>
           </div>
           <div>
             <div className="w-full bg-gray-200 rounded-full h-6">
               <div 
                 className="bg-gradient-to-r from-purple-600 to-blue-600 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold"
-                style={{ width: `${dashboard.dhs.mediaIndice}%` }}
+                style={{ width: `${dashboard.dhs?.mediaIndice || 0}%` }}
               >
-                {dashboard.dhs.mediaIndice}%
+                {dashboard.dhs?.mediaIndice || 0}%
               </div>
             </div>
             <p className="text-xs text-gray-600 mt-2 text-center">
-              Nível: {dashboard.dhs.mediaIndice < 40 ? 'Em Desenvolvimento' : dashboard.dhs.mediaIndice < 60 ? 'Intermediário' : dashboard.dhs.mediaIndice < 80 ? 'Avançado' : 'Excelente'}
+              Nível: {(dashboard.dhs?.mediaIndice || 0) < 40 ? 'Em Desenvolvimento' : (dashboard.dhs?.mediaIndice || 0) < 60 ? 'Intermediário' : (dashboard.dhs?.mediaIndice || 0) < 80 ? 'Avançado' : 'Excelente'}
             </p>
           </div>
         </div>
