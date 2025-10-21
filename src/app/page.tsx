@@ -135,7 +135,7 @@ export default function Homepage() {
       
       {/* HERO SECTION - PROFISSIONAL */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
         </div>
         
@@ -191,8 +191,8 @@ export default function Homepage() {
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
-                Plataforma completa com <strong className="text-white">Inteligência Artificial</strong> para prevenção,
+              <p className="text-xl md:text-2xl text-blue-50 mb-10 max-w-4xl mx-auto leading-relaxed font-medium">
+                Plataforma completa com <strong className="text-yellow-300">Inteligência Artificial</strong> para prevenção,
                 resposta rápida e recuperação em situações de emergência no Rio Grande do Sul
               </p>
 
@@ -216,22 +216,22 @@ export default function Homepage() {
               </div>
 
               {/* Trust Badges */}
-              <div className="flex flex-wrap gap-8 justify-center items-center text-blue-200 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span><strong className="text-white">85%</strong> precisão IA</span>
+              <div className="flex flex-wrap gap-8 justify-center items-center text-blue-100 text-base font-medium">
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <CheckCircle className="w-5 h-5 text-green-300" />
+                  <span><strong className="text-white font-bold">85%</strong> precisão IA</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-blue-300" />
-                  <span><strong className="text-white">280+</strong> voluntários</span>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <Users className="w-5 h-5 text-blue-200" />
+                  <span><strong className="text-white font-bold">280+</strong> voluntários</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-purple-300" />
-                  <span><strong className="text-white">30+</strong> abrigos cadastrados</span>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <Building2 className="w-5 h-5 text-purple-200" />
+                  <span><strong className="text-white font-bold">30+</strong> abrigos cadastrados</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-yellow-300" />
-                  <span><strong className="text-white">24/7</strong> monitoramento</span>
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <Clock className="w-5 h-5 text-yellow-200" />
+                  <span><strong className="text-white font-bold">24/7</strong> monitoramento</span>
                 </div>
               </div>
             </div>
