@@ -69,7 +69,7 @@ const quickActions: QuickAction[] = [
 
 export default function QuickActions() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true); // Inicia minimizado
 
   useEffect(() => {
     // Mostrar atalhos após 2 segundos
@@ -86,7 +86,7 @@ export default function QuickActions() {
     return (
       <button
         onClick={() => setIsMinimized(false)}
-        className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform group"
+        className="hidden md:block fixed bottom-6 right-6 z-30 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform group"
         aria-label="Mostrar atalhos rápidos"
       >
         <Zap className="w-6 h-6 group-hover:animate-bounce" />
@@ -98,7 +98,7 @@ export default function QuickActions() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 bg-white rounded-2xl shadow-2xl border-2 border-blue-100 p-6 max-w-sm animate-fade-in">
+    <div className="hidden md:block fixed bottom-6 right-6 z-30 bg-white rounded-2xl shadow-2xl border-2 border-blue-100 p-6 max-w-sm animate-fade-in">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
