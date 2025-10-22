@@ -134,12 +134,12 @@ export default function Homepage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       
       {/* HERO SECTION - PROFISSIONAL */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white pt-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white pt-24 md:pt-32">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           {user ? (
             // USUÁRIO LOGADO
             <div className="text-center">
@@ -186,13 +186,13 @@ export default function Homepage() {
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
                 Gestão Inteligente de<br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-white to-blue-200">
+                <span className="text-white drop-shadow-lg">
                   Desastres Naturais
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-blue-50 mb-10 max-w-4xl mx-auto leading-relaxed font-medium">
-                Plataforma completa com <strong className="text-yellow-300">Inteligência Artificial</strong> para prevenção,
+              <p className="text-xl md:text-2xl text-white mb-10 max-w-4xl mx-auto leading-relaxed font-semibold drop-shadow-md">
+                Plataforma completa com <span className="bg-yellow-400 text-blue-900 px-3 py-1 rounded-lg font-bold">Inteligência Artificial</span> para prevenção,
                 resposta rápida e recuperação em situações de emergência no Rio Grande do Sul
               </p>
 

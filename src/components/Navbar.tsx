@@ -501,11 +501,11 @@ export default function Navbar() {
       </nav>
 
       {pathname === '/' && (
-        <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-2">
+        <div className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 text-white py-3 shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-sm font-semibold flex items-center justify-center gap-4">
-              <Phone className="w-4 h-4" />
-              <span>Emergência: Defesa Civil 199 | Bombeiros 193 | SAMU 192</span>
+            <p className="text-center text-sm md:text-base font-bold flex items-center justify-center gap-3 animate-pulse">
+              <Phone className="w-5 h-5" />
+              <span>🆘 Emergência: Defesa Civil <span className="text-yellow-300 text-lg">199</span> | Bombeiros <span className="text-yellow-300 text-lg">193</span> | SAMU <span className="text-yellow-300 text-lg">192</span></span>
             </p>
           </div>
         </div>
