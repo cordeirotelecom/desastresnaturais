@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import {
   Home, AlertTriangle, Users, MapPin, Shield, FileText,
   Heart, Phone, Menu, X, MessageSquare, Building2, User,
-  LogOut, Settings, UserCircle, LogIn, Brain, Activity,
+  LogOut, Settings, UserCircle, LogIn, Brain,
   Newspaper, Globe, BookOpen
 } from 'lucide-react';
 import { getCurrentUser, logout, type User as UserType } from '@/services/auth';

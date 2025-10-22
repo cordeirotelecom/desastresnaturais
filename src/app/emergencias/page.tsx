@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { AlertTriangle, MapPin, Clock, Phone, User, Calendar, Filter, Search, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { AlertTriangle, MapPin, Clock, Phone, User, Filter, Search, CheckCircle, AlertCircle } from 'lucide-react';
 import AvisoDadosFicticios from '@/components/AvisoDadosFicticios';
 
 interface Emergencia {

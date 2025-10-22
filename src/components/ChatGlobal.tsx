@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   MessageSquare, Send, Users, AlertTriangle, User as UserIcon, Shield, Heart, 
-  Clock, RefreshCw, LogOut, Bell, Settings, TrendingUp, Activity
+  Clock, RefreshCw, Activity
 } from 'lucide-react';
 import { getCurrentUser } from '../services/auth';
 import { useRouter } from 'next/navigation';

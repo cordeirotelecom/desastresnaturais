@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Circle, Polyline, useMap } from 'react-leaflet';
-import { Icon, LatLngExpression, divIcon } from 'leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
+import { LatLngExpression, divIcon } from 'leaflet';
 import { 
-  MapPin, AlertTriangle, Users, Home, Navigation, Filter,
+  AlertTriangle, Users, Home, Navigation, Filter,
   Layers, Info, X, ChevronDown, ChevronUp, Phone, Clock
 } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';

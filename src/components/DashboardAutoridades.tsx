@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import {
-  Shield, Users, Home, AlertTriangle, TrendingUp, Download,
-  FileText, CheckCircle, Clock, XCircle, Phone, MapPin,
-  Filter, Search, Calendar, BarChart3, PieChart, Activity,
-  Eye, Edit, Trash2, UserCheck, Package, Heart, MessageSquare
+  Shield, Users, Home, AlertTriangle, Download,
+  FileText, CheckCircle, Clock, Phone, MapPin,
+  Calendar, BarChart3, PieChart, Activity,
+  Eye, Edit, UserCheck, Package, Heart, MessageSquare
 } from 'lucide-react';
 
 // ==================== TIPOS ====================

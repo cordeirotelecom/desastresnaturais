@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Phone, Mail, MapPin, Github, Twitter, Facebook,
+  Phone, Mail, MapPin, Twitter, Facebook,
   Instagram, Linkedin, Heart, Shield, AlertTriangle
 } from 'lucide-react';
 
@@ -28,16 +28,16 @@ export default function Footer() {
               Modelo mundial para Desenvolvimento Harmônico Sustentável.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-blue-800 p-2 rounded-lg hover:bg-blue-700 transition" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>

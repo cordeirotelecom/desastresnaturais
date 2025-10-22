@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { 
-  MapPin, Users, Heart, AlertTriangle, MessageSquare, FileText, Shield, Phone, 
-  ChevronRight, Clock, CheckCircle, Zap, Activity, Package, TrendingUp, 
-  UserPlus, LogIn, Brain, ArrowRight, Play, Star, Award, Target,
-  Building2, Map, HeartHandshake, Radio, Bot, BarChart3, Search
+  MapPin, Users, Heart, AlertTriangle, Phone, 
+  ChevronRight, Clock, CheckCircle, Zap, Package, TrendingUp, 
+  UserPlus, LogIn, Brain, ArrowRight, Award, Target,
+  Building2, Map, HeartHandshake, Radio, Bot, BarChart3
 } from 'lucide-react';
 import { getCurrentUser, type User } from '@/services/auth';
 import { getTotalVagasDisponiveis, getTotalCapacidade } from '@/data/real-locations';

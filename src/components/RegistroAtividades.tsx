@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  Activity, User as UserIcon, Calendar, Filter, Download, 
+  Activity, User as UserIcon, Filter, Download, 
   AlertTriangle, Heart, Users, Shield, Package, 
-  MapPin, MessageSquare, FileText, Clock, TrendingUp,
+  MapPin, MessageSquare, FileText, Clock,
   CheckCircle, XCircle, AlertCircle, Info
 } from 'lucide-react';
 import { getCurrentUser, type User } from '@/services/auth';
